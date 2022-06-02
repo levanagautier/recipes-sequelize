@@ -3,6 +3,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('recipes-subrecipes', {
       recipeId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
@@ -12,6 +13,7 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       subRecipeId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
@@ -21,7 +23,8 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       stepOrder: {
-          type: Sequelize.TINYINT(2),
+        allowNull: false,
+        type: Sequelize.TINYINT(2),
       }
     });
   },

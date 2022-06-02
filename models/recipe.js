@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+        Recipe.belongsToMany(models.SubRecipes, {
+            foreignKey: 'subRecipeId',
+            through: 'recipes-subrecipes',
+            as: 'SubRecipe'
+        })
     }
   }
   Recipe.init({
@@ -20,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     published: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Recipe',
+    modelName: 'Recipes',
   });
   return Recipe;
 };

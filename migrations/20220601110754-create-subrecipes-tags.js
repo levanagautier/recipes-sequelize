@@ -3,6 +3,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('subrecipes-tags', {
       subRecipeId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
@@ -12,6 +13,7 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       tagId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {

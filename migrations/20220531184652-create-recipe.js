@@ -9,16 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING(255)
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       picture: {
         type: Sequelize.STRING(255),
-        allowNull: true,
       },
       published: {
+        allowNull: false,
         type: Sequelize.TINYINT(1)
       },
       createdAt: {

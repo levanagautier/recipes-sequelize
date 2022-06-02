@@ -3,6 +3,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('subrecipes-ingredients', {
       subRecipeId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
@@ -12,6 +13,7 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       ingredientId: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
@@ -24,6 +26,7 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       unit: {
+        allowNull: false,
         type: Sequelize.ENUM('','g','mg','l','cl','ml')
       },
       prepNotes: {
