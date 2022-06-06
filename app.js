@@ -1,18 +1,21 @@
 const express = require('express');
 const session = require('express-session');
+const cors = require('cors');
 
 const app = express();
 
 const { Recipes } = require('./models');
 const router = require('./routes/index.js');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || 'localhost';
 
 app.use(express.json());
 app.use(express.static('public'));
-app.set('views', './views');
-app.set('view engine', 'ejs');
+app.use(cors({
+    origin: "*"
+}));
 app.use(router);
+
 
 app.listen(PORT, () => {
   console.log(`App running on http://${HOST}:${PORT}`)

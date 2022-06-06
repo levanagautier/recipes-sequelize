@@ -3,8 +3,6 @@ const appRouter = express.Router();
 // const { homepage } = require('../controllers/recipe.controller.js')
 const controllers = require('../controllers');
 
-appRouter.get('/home', controllers.homepage)
-
 appRouter
     .route('/recipes')
     .get(controllers.getAllRecipes)

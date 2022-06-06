@@ -9,7 +9,23 @@ const getAllRecipes = async (req, res) => {
                     as: "SubRecipes",
                     through: {
                         attributes : []
-                    }
+                    },
+                    include: [
+                        {
+                            model : models.Ingredients,
+                            as: "Ingredient",
+                            through: {
+                                attributes : []
+                            },
+                        },
+                        {
+                            model : models.Utensils,
+                            as: "Utensil",
+                            through: {
+                                attributes : []
+                            },
+                        }
+                    ]
                 },
                 
             ]

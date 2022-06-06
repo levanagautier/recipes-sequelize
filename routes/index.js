@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers');
 
 const appRouter = require('./app.routes.js');
 
@@ -11,9 +12,6 @@ router.use((req, res, next) => {
 });
 
 router.use('/', appRouter);
-// router.get('/', (req, res) => {
-//     res.send('Welcome to Recipes!')
-// })
   
 router.get('*', (req, res, next) => {
     // res.render("main/layout", {
