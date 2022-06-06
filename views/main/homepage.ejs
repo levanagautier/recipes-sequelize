@@ -1,6 +1,6 @@
 <section class="articles__wrapper">
     <article class="articles__container">
-        <% for (const { _id, index, title, content, categories } of articles) { %> 
+        <% for (const { id, title } of recipes) { %> 
                     
             <a class="article__item" id="<%= index %>" href="/user/article/<%= _id %>">
                 <div class="article__title">
@@ -10,14 +10,7 @@
                     <h3 class="article__title--no-overline"><%= title %></h3>
     
                 </div>
-                <div class="article__excerpt"><%= content %></div>
-                <ul class="article__categories">
-
-                    <% for (const category of categories ) { %> 
-                        <li class="categories__item category" id="category-<%= category._id %>"><%= category.name %></li>
-                    <% } %>
-    
-                </ul>
+                <div class="article__excerpt"><%= title %></div>
             </a>
         
         <% } %>

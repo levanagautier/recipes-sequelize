@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         Recipe.belongsToMany(models.SubRecipes, {
             foreignKey: 'subRecipeId',
             through: 'recipes-subrecipes',
-            as: 'SubRecipe'
+            as: 'SubRecipes'
         })
     }
   }

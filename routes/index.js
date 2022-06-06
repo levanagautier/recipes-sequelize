@@ -16,11 +16,11 @@ router.use('/', appRouter);
 // })
   
 router.get('*', (req, res, next) => {
-    res.render("main/layout", {
-        template: "error",
-        error: "404 — La page que vous avez demandé n'existe pas",
-    });
-    return;
+    // res.render("main/layout", {
+    //     template: "error",
+    //     error: "404 — La page que vous avez demandé n'existe pas",
+    // });
+    // return;
 });
 
 module.exports = router;

@@ -10,19 +10,5 @@
     </div>
 
     <div class="user__actions-wrapper">
-        <% if (pseudo) { %>
-            <div class="user__welcome-msg">Bienvenue, <span class="user__pseudo"><%= pseudo %></span>&#8239;!</div>
-        <% } %>
-        <div class="user__login">
-
-            <% if (pseudo) { %>
-                <a id="button__logout" class="button--linkto button--muted" href="/auth/logout">Logout</a>
-            <% } else { %>
-                <a id="button__login" class="button--linkto button--muted" href="/auth/login">Login</a>
-            <% } %>
-            <% if(!pseudo)  {%>
-                / <a id="button__logout" class="button--linkto button--muted" href="/auth/register">Sign-up</a>
-            <% } %>
-        </div>
     </div>
 </aside>

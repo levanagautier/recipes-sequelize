@@ -3,19 +3,19 @@
 module.exports = {
     async up (queryInterface, Sequelize) {
         return queryInterface.bulkInsert('recipes-subrecipes', [{
-            recipeId: 30,
-            subRecipeId: 7,
+            recipeId: 1,
+            subRecipeId: 2,
             stepOrder: 3
           },
           {
-            recipeId: 31,
-            subRecipeId: 7,
-            stepOrder: 3
+            recipeId: 2,
+            subRecipeId: 3,
+            stepOrder: 2
           },
           {
-            recipeId: 32,
-            subRecipeId: 8,
-            stepOrder: 3
+            recipeId: 2,
+            subRecipeId: 1,
+            stepOrder: 1
           }], {});
       },
     
