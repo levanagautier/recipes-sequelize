@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('../controllers');
 
+const apiRouter = require('./api.routes.js');
 const appRouter = require('./app.routes.js');
 
 
@@ -11,14 +11,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.use('/', appRouter);
-  
-router.get('*', (req, res, next) => {
-    // res.render("main/layout", {
-    //     template: "error",
-    //     error: "404 — La page que vous avez demandé n'existe pas",
-    // });
-    // return;
-});
+router.use('/', apiRouter);
+router.use('/auth', appRouter);
 
 module.exports = router;

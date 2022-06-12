@@ -27,13 +27,24 @@ const {
     updateUtensil,
     deleteUtensil
  } = require('./utensil.controller')
- const { 
-    getAllTags,
-    getTag,
-    insertTag,
-    updateTag,
-    deleteTag
+const { 
+   getAllTags,
+   getTag,
+   insertTag,
+   updateTag,
+   deleteTag
  } = require('./tag.controller')
+const { 
+    getAllUsers,
+    getUser,
+    insertUser,
+    updateUser,
+    deleteUser
+ } = require('./user.controller')
+const { 
+    login,
+    logout
+ } = require('./auth.controller')
 
  
 
@@ -89,4 +100,13 @@ module.exports = {
     insertTag,
     updateTag,
     deleteTag,
+    // users
+    getAllUsers,
+    getUser,
+    insertUser,
+    updateUser,
+    deleteUser,
+    // auth
+    login,
+    logout,
 }
