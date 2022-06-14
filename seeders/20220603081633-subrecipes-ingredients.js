@@ -7,21 +7,27 @@ module.exports = {
             ingredientId: 2,
             qty: 200,
             unit: 'g',
-            prepNotes: ''
+            prepNotes: '',
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
             subRecipeId: 2,
             ingredientId: 3,
             qty: 250,
             unit: 'g',
-            prepNotes: 'room temp'
+            prepNotes: 'room temp',
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
             subRecipeId: 3,
             ingredientId: 1,
             qty: 300,
             unit: 'g',
-            prepNotes: 'sifted'
+            prepNotes: 'sifted',
+            createdAt: new Date(),
+            updatedAt: new Date()
           }], {});
       },
     

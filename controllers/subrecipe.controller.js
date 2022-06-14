@@ -1,4 +1,5 @@
 const models = require('../models');
+const subrecipe = require('../models/subrecipe');
 
 const getAllSubRecipes = async (req, res) => {
     try {
@@ -11,8 +12,25 @@ const getAllSubRecipes = async (req, res) => {
 
 const getSubRecipe = async (req, res) => {
     try {
-        const SubRecipe = await models.SubRecipes.findByPk(req.params.id, { attributes: ['id', 'name']})
-        res.send(SubRecipe)
+
+        const SubRecipe = await models.SubRecipes.findOne(
+            { 
+                where : { id: req.params.id},
+                include: {all :true}
+            }
+            )
+        // const SubRecipe = await models.SubRecipes.findByPk(req.params.id, {
+        //     include : [
+        //         {
+        //             model : models.Ingredients,
+        //             as: "Ingredient",
+        //             through : {
+        //                 attributes : ['subRecipeId']
+        //             }
+        //         }
+        //     ]
+        // })
+        res.send({SubRecipe})
     } catch (error) {
         return res.status(400).json({ error: error.message })
     }

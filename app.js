@@ -7,12 +7,12 @@ const app = express();
 const router = require('./routes/index.js');
 const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || 'localhost';
-
-app.use(express.json());
-app.use(express.static('public'));
 app.use(cors({
     origin: "*"
 }));
+app.use(express.json());
+app.use(express.static('public'));
+
 app.use(session({ secret: 'Fanfan'}));
 app.use(router);
 

@@ -2,29 +2,43 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('recipes-subrecipes', {
-      recipeId: {
-        allowNull: false,
-        primaryKey: true,
-        type: Sequelize.INTEGER.UNSIGNED,
-        references: {
-            model: 'Recipes',
-            key: 'id',
+        id: {
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+            type: Sequelize.INTEGER.UNSIGNED
         },
-        onDelete: 'CASCADE'
-      },
-      subRecipeId: {
-        allowNull: false,
-        primaryKey: true,
-        type: Sequelize.INTEGER.UNSIGNED,
-        references: {
-            model: 'SubRecipes',
-            key: 'id',
+        recipeId: {
+            allowNull: false,
+            // primaryKey: true,
+            type: Sequelize.INTEGER.UNSIGNED,
+            references: {
+                model: 'Recipes',
+                key: 'id',
+            },
+            onDelete: 'CASCADE'
         },
-        onDelete: 'CASCADE'
+        subRecipeId: {
+            allowNull: false,
+            // primaryKey: true,
+            type: Sequelize.INTEGER.UNSIGNED,
+            references: {
+                model: 'SubRecipes',
+                key: 'id',
+            },
+            onDelete: 'CASCADE'
+        },
+        stepOrder: {
+            allowNull: false,
+            type: Sequelize.TINYINT(2),
       },
-      stepOrder: {
+      createdAt: {
         allowNull: false,
-        type: Sequelize.TINYINT(2),
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

@@ -2,7 +2,13 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('subrecipes-ingredients', {
-      subRecipeId: {
+        id: {
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+            type: Sequelize.INTEGER.UNSIGNED
+        },
+        subRecipeId: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
@@ -31,6 +37,14 @@ module.exports = {
       },
       prepNotes: {
         type: Sequelize.STRING(255)
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

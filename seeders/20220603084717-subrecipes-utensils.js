@@ -5,14 +5,20 @@ module.exports = {
         return queryInterface.bulkInsert('subrecipes-utensils', [{
             subRecipeId: 1,
             utensilId: 7,
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
             subRecipeId: 2,
             utensilId: 1,
+            createdAt: new Date(),
+            updatedAt: new Date()
           },
           {
             subRecipeId: 3,
             utensilId: 8,
+            createdAt: new Date(),
+            updatedAt: new Date()
           },], {});
       },
     

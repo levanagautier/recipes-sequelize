@@ -16,9 +16,10 @@ module.exports = (sequelize, DataTypes) => {
             as: 'Ingredient'
         }),
         SubRecipe.belongsToMany(models.Recipes, {
-            foreignKey: 'recipeId',
+            foreignKey: 'subRecipeId',
+            sourceKey : 'id',
             through: 'recipes-subrecipes',
-            as: 'Recipes'
+            as: 'Recipe'
         }),
         SubRecipe.belongsToMany(models.Tags, {
             foreignKey: 'subRecipeId',

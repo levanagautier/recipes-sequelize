@@ -1,4 +1,5 @@
 const models = require('../models');
+const { Op } = require('sequelize');
 
 const getAllIngredients = async (req, res) => {
     try {
@@ -48,10 +49,32 @@ const deleteIngredient = async (req, res) => {
 }
 
 
+const getIngredientsByName = async (req,res) => {
+    try {
+        const ingredients = await models.Ingredients.findAll({
+            where: {
+                name : {
+                    [Op.startsWith] : req.params.ingredientName
+                }
+            }
+        })
+
+        res.status(200).json({
+            data: ingredients
+        })
+        
+    } catch (error) {
+        return res.status(400).json({error: error.message})
+        
+    }
+}
+
+
 module.exports = {
     getAllIngredients,
     getIngredient,
     insertIngredient,
     updateIngredient,
-    deleteIngredient
+    deleteIngredient,
+    getIngredientsByName
 };
